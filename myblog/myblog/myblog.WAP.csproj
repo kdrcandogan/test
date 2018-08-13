@@ -98,6 +98,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="css\demo-page.css" />
     <Content Include="css\half-slider.css" />
     <Content Include="css\hover-min.css" />
@@ -106,10 +107,13 @@
     <Content Include="css\landing-page.min.css" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="img\ampul.jpg" />
+    <Content Include="img\anahtar.jpeg" />
     <Content Include="img\bg-masthead.jpg" />
-    <Content Include="img\bg-showcase-1.jpg" />
-    <Content Include="img\bg-showcase-2.jpg" />
-    <Content Include="img\bg-showcase-3.jpg" />
+    <Content Include="img\electric.jpg" />
+    <Content Include="img\salter.jpg" />
+    <Content Include="img\sessistemi.jpg" />
+    <Content Include="img\sessystem.jpg" />
     <Content Include="img\testimonials-1.jpg" />
     <Content Include="img\testimonials-2.jpg" />
     <Content Include="img\testimonials-3.jpg" />
@@ -258,6 +262,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -289,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -482,6 +488,10 @@
     <Content Include="scss\hover.scss" />
     <Content Include="scss\_hacks.scss" />
     <Content Include="scss\_options.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -491,7 +501,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
