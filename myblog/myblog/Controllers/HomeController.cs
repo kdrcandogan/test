@@ -11,6 +11,8 @@ namespace myblog.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            BussinesLayer.test test = new BussinesLayer.test();
+
             return View();
         }
 
