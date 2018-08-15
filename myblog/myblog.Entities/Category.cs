@@ -15,7 +15,6 @@ namespace myblog.Entities
         public string Title { get; set; }
         [StringLength(150)]
         public string Description { get; set; }
-
         public virtual List<Note> Notes { get; set; }
     }
 }

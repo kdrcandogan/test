@@ -19,7 +19,7 @@ namespace myblog.Entities
         public string Username { get; set; }
         [Required,StringLength(25)]
         public string Email { get; set; }
-        [StringLength(70)]
+        [Required,StringLength(70)]
         public string Password { get; set; }      
         public bool IsActive { get; set; }
         [Required]

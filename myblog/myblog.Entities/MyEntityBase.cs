@@ -8,10 +8,15 @@ using System.Threading.Tasks;
 
 namespace myblog.Entities
 {
-   public class MyEntityBase
+    public class MyEntityBase
     {
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID { get; set; }     
-       
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string ID { get; set; }
+        [Required]
+        public DateTime ModifiedOn { get; set; }
+        [Required]
+        public DateTime CreatedOn { get; set; }
+        [Required, StringLength(30)]
+        public string ModifiedUsername { get; set; }
     }
 }
