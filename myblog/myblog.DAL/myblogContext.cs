@@ -14,5 +14,9 @@ namespace myblog.DAL
         public DbSet<Note> Notes { get; set; }        
         public DbSet<Category> Categories { get; set; }
         
+        public myblogContext()
+        {
+            Database.SetInitializer(new MyIntializer()); 
+        }
     }
 }

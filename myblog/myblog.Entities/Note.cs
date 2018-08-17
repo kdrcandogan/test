@@ -15,7 +15,7 @@ namespace myblog.Entities
         [Required,StringLength(25)]
         public string Text { get; set; }
         public bool IsDraft { get; set; }       
-        public int CategoryID { get; set; }
+       
         public virtual User Owner { get; set; }
         public virtual Category Category { get; set; }
 

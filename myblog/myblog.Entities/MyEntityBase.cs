@@ -11,7 +11,7 @@ namespace myblog.Entities
     public class MyEntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID { get; set; }
+        public int ID { get; set; }
         [Required]
         public DateTime ModifiedOn { get; set; }
         [Required]

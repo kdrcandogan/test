@@ -11,7 +11,7 @@ namespace myblog.BussinesLayer
         public test()
         {
             DAL.myblogContext db = new DAL.myblogContext();
-            db.Database.CreateIfNotExists();
+            db.Categories.ToList();
         }
     }
 }
