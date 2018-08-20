@@ -12,7 +12,8 @@ namespace myblog.Controllers
         public ActionResult Index()
         {
             BussinesLayer.test test = new BussinesLayer.test();
-
+            //test.InsertTest();
+            test.DeleteTest();
             return View();
         }
 

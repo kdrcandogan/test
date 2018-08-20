@@ -44,31 +44,55 @@ namespace myblog.DAL
             context.myblogUsers.Add(admin);
             context.myblogUsers.Add(standartUser);
 
-            for (int i = 0; i < 10; i++)
+            Category elektrik = new Category()
             {
-                Category cat = new Category()
-                {
-                    Title = FakeData.PlaceData.GetStreetName(),
-                    Description = FakeData.PlaceData.GetAddress(),
-                    ModifiedOn = DateTime.Now,
-                    ModifiedUsername = "svbnbyrk"
-                };
+                Title = "Elektrik tesisat",
+                Description = "elektrik",  
+                CreatedOn=DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                ModifiedUsername = admin.Username
+            };
 
-                for(int k= 0; k < FakeData.NumberData.GetNumber(3, 5); k++)
-                {
-                    Note not = new Note()
-                    {                      
-                        Title= FakeData.TextData.GetAlphabetical(FakeData.NumberData.GetNumber(5,20)),
-                        Text= FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1,3)),
-                        Category= cat,
-                        IsDraft=false,
-                        Owner= (k % 2 == 0)? admin :standartUser,
-                        CreatedOn= FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1),DateTime.Now),
-                        ModifiedOn= FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
-                        ModifiedUsername=(k % 2==0)? admin.Username : standartUser.Username
-                    };
-                }
-            }
+            Category soundsystem = new Category()
+            {
+                Title = "Ses Sistemleri",
+                Description = "mekan seslendirme",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                ModifiedUsername = admin.Username
+            };
+            context.Categories.Add(soundsystem);
+            context.Categories.Add(elektrik);
+
+            Note amfi = new Note()
+            {
+                Title = "Miker Amfi",
+                Text = "Sony KA-FA 1500 1500watt mixer",
+                Category = soundsystem,
+                IsDraft = false,
+                Photo="fotografyolu",
+                Owner = admin,
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                ModifiedUsername = admin.Username
+            };
+
+            Note evtesisat = new Note()
+            {
+                Title = "3+1 Ev Tesisat",
+                Text = " Mustakil eviç dış tesisat ışıklandırma",
+                Category = elektrik,
+                IsDraft = false,
+                Photo = "fotografyolu",
+                Owner = standartUser,
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                ModifiedUsername = standartUser.Username
+            };
+
+            
+            context.Notes.Add(amfi);
+            context.Notes.Add(evtesisat);
         }
     }
 }
