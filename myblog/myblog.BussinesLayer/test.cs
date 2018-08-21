@@ -11,11 +11,13 @@ namespace myblog.BussinesLayer
     {
         private Repository<User> repo_user = new Repository<User>();
         private Repository<Category> repo_cate = new Repository<Category>();
+        private Repository<Note> repo_note = new Repository<Note>();
         public test()
         {
             //DAL.myblogContext db = new DAL.myblogContext();// Bunun görevini new lemek olayını repository yapıyor artık
             //db.Categories.ToList();          
             List<Category> categories = repo_cate.List();
+            List<Category> categories_filter = repo_cate.List(x => x.ID >1);
 
         }
 
@@ -46,7 +48,7 @@ namespace myblog.BussinesLayer
             if (user != null)
             {
                 user.Username = "Kazım";
-                repo_user.Save();
+                int result = repo_user.Update(user);
             }
         }
         public void DeleteTest()

@@ -10,13 +10,13 @@ using System.Linq.Expressions;
 
 namespace myblog.BussinesLayer
 {
-    public class Repository<T> where T : class
+    public class Repository<T>: RepositoryBase where T : class
     {
-        private myblogContext db = new myblogContext();
+        
         private DbSet<T> _objectSet;
         
         public Repository()
-        {
+        {       
             _objectSet = db.Set<T>();
         }
         public List<T> List()
@@ -42,7 +42,7 @@ namespace myblog.BussinesLayer
             return Save();
 
         }    
-        public int Save()
+        private int Save()
         {
             return db.SaveChanges();
         }
